@@ -3,7 +3,7 @@ package com.subject.basicproject.Service;
 import com.subject.basicproject.Entity.Notice;
 import com.subject.basicproject.Repo.mongo.NoticeMongoStore;
 import org.springframework.stereotype.Service;
-import com.subject.basicproject.Util.IdUtil;
+import com.subject.basicproject.Util.Util;
 import java.util.List;
 
 
@@ -23,7 +23,7 @@ public class NoticeService {
     }
 
     public void regNotice(Notice notice) {
-        notice.setId(IdUtil.genId());
+        notice.setId(Util.genId());
         store.create(notice);
     }
 

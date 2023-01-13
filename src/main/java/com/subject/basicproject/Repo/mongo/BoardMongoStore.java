@@ -22,6 +22,7 @@ public class BoardMongoStore implements boardStore {
     @Override
     public void create(Board board) {
         BoardDoc boardDoc = new BoardDoc(board);
+
         repo.save(boardDoc);
     }
 

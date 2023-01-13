@@ -3,7 +3,7 @@ package com.subject.basicproject.Service;
 import com.subject.basicproject.Entity.FAQ;
 
 import com.subject.basicproject.Repo.mongo.FAQMongoStore;
-import com.subject.basicproject.Util.IdUtil;
+import com.subject.basicproject.Util.Util;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public class FAQService {
     }
 
     public void regFaq(FAQ faq) {
-        faq.setId(IdUtil.genId());
+        faq.setId(Util.genId());
         store.create(faq);
     }
 

@@ -2,11 +2,14 @@ package com.subject.basicproject.Service;
 
 import com.subject.basicproject.Entity.Board;
 import com.subject.basicproject.Repo.mongo.BoardMongoStore;
-import com.subject.basicproject.Util.IdUtil;
+import com.subject.basicproject.Util.Util;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import static com.subject.basicproject.Util.Util.genDate;
 
 @Service
 public class BoardService {
@@ -23,9 +26,9 @@ public class BoardService {
     }
 
     public void regBoard(Board board) {
-        board.setId(IdUtil.genId());
-        board.setCreateDate(new Date().toString());
-        board.setModDate(new Date().toString());
+        board.setId(Util.genId());
+        board.setCreateDate(genDate());
+        board.setModDate(genDate());
         board.setViewCount(0);
         store.create(board);
     }

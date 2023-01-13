@@ -2,7 +2,7 @@ package com.subject.basicproject.Service;
 
 import com.subject.basicproject.Entity.QnA;
 import com.subject.basicproject.Repo.mongo.QnAMongoStore;
-import com.subject.basicproject.Util.IdUtil;
+import com.subject.basicproject.Util.Util;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -24,8 +24,8 @@ public class QnAService {
 
 
     public void regQnA(QnA qna) {// regQna 는 사용자가 질문 등록할 떄 호출함.
-        qna.setId(IdUtil.genId());
-        qna.setRegDate(new Date().toString());
+        qna.setId(Util.genId());
+        qna.setRegDate(Util.genDate());
         store.create(qna);
     }
 
