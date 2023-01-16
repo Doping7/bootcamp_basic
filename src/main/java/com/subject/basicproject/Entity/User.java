@@ -4,9 +4,10 @@ import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class User{
     String userId;
     String userName;
+    String password;
+    String auth;
 }

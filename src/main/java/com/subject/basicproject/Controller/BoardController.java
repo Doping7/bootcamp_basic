@@ -23,7 +23,7 @@ public class BoardController {
     }
 
     @PostMapping("/getBoard")
-    public Board getBoard(Long id) { return service.getBoard(id); }
+    public Board getBoard(String id) { return service.getBoard(id); }
 
     @PostMapping("/regBoard")
     public void regBoard(@RequestBody Board board){
@@ -34,5 +34,5 @@ public class BoardController {
     public void modBoard(Board board) { service.modBoard(board); }
 
     @PostMapping("/delBoard")
-    public void deleteBoard(Long id) {service.deleteBoard(id); }
+    public void deleteBoard(String id) {service.deleteBoard(id); }
 }

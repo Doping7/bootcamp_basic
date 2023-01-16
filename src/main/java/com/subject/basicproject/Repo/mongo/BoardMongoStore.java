@@ -44,7 +44,7 @@ public class BoardMongoStore implements boardStore {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(String id) {
         repo.deleteById(id);
     }
 
@@ -59,7 +59,7 @@ public class BoardMongoStore implements boardStore {
     }
 
     @Override
-    public Board retrieveById(Long id) {
+    public Board retrieveById(String id) {
         return repo.findById(id).get().toEntity();
     }
 

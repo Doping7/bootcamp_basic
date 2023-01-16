@@ -37,11 +37,11 @@ public class BoardService {
         store.update(board);
     }
 
-    public void deleteBoard(Long id) {
+    public void deleteBoard(String id) {
         store.delete(id);
     }
 
-    public Board getBoard(Long id) {
+    public Board getBoard(String id) {
         return store.retrieveById(id);
     }
 }
