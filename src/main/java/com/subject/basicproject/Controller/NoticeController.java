@@ -19,8 +19,8 @@ public class NoticeController {
         return service.getNoticeList();
     }
 
-    @PostMapping("/getNotice")
-    public Notice getNotice(String id) { return service.getNotice(id); }
+    @PostMapping("/getNotice/{id}")
+    public Notice getNotice(@PathVariable("id") String id) { return service.getNotice(id); }
 
     @PostMapping("/regNotice")
     public void regNotice(@RequestBody Notice notice){

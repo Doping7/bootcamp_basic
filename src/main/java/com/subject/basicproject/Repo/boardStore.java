@@ -1,8 +1,10 @@
 package com.subject.basicproject.Repo;
 
 import com.subject.basicproject.Entity.Board;
+import com.subject.basicproject.Repo.mongo.Doc.BoardDoc;
 
 import java.util.List;
+
 
 public interface boardStore {
 

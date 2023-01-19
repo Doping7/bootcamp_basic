@@ -7,7 +7,9 @@ import com.subject.basicproject.Repo.mongo.repository.QnARepo;
 import com.subject.basicproject.Repo.qnaStore;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class QnAMongoStore implements qnaStore {
@@ -43,7 +45,7 @@ public class QnAMongoStore implements qnaStore {
     }
 
     @Override
-    public void delete(Long id) {
+    public void delete(String id) {
         repo.deleteById(id);
     }
 
@@ -58,8 +60,9 @@ public class QnAMongoStore implements qnaStore {
     }
 
     @Override
-    public QnA retrieveById(Long id) {
-        return repo.findById(id).get().toEntity();
+    public QnA retrieveById(String id) {
+        Optional<QnADoc> qnaDoc = repo.findById(id);
+        return qnaDoc.map(QnADoc::toEntity).orElseGet(()-> null);
     }
 
     @Override

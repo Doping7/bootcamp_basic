@@ -2,7 +2,6 @@ package com.subject.basicproject.Repo.mongo.Doc;
 
 import com.subject.basicproject.Entity.User;
 import com.subject.basicproject.Entity.Board;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

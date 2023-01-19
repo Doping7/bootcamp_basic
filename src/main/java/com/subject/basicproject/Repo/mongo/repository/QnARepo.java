@@ -7,10 +7,10 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface QnARepo extends MongoRepository<QnADoc, Long> {
+public interface QnARepo extends MongoRepository<QnADoc, String> {
 
 
     List<QnADoc> findAll ();
-    Optional<QnADoc> findById(Long id);
+    Optional<QnADoc> findById(String id);
 
 }

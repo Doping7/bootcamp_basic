@@ -10,10 +10,10 @@ public interface qnaStore {
     void createAll(List<QnA> qnas);
     void update(QnA qna);
     void delete(QnA qna);
-    void delete(Long id);
+    void delete(String id);
     void deleteAll(List<String> ids);
     boolean exists(Long id);
-    QnA retrieveById(Long id);
+    QnA retrieveById(String id);
 
     List<QnA> retrieveAll();
 

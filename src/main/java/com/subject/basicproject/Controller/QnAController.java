@@ -3,10 +3,7 @@ package com.subject.basicproject.Controller;
 import com.subject.basicproject.Entity.QnA;
 import com.subject.basicproject.Service.QnAService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,8 +18,8 @@ public class QnAController {
         return service.getQnAList();
     }
 
-    @PostMapping("/getQnA")
-    public QnA getQnA(Long id) { return service.getQnA(id); }
+    @PostMapping("/getQnA/{id}")
+    public QnA getQnA(@PathVariable("id") String id) { return service.getQnA(id); }
 
     @PostMapping("/regQnA")
     public void regQnA(@RequestBody QnA qna){
@@ -33,5 +30,5 @@ public class QnAController {
     public void modQnA(QnA qna) { service.modQnA(qna); }
 
     @PostMapping("/delQnA")
-    public void deleteQnA(Long id) {service.deleteQnA(id); }
+    public void deleteQnA(String id) {service.deleteQnA(id); }
 }

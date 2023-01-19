@@ -3,12 +3,11 @@ package com.subject.basicproject.Controller;
 import com.subject.basicproject.Entity.Board;
 import com.subject.basicproject.Service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/board")
@@ -22,8 +21,8 @@ public class BoardController {
         return service.getBoardList();
     }
 
-    @PostMapping("/getBoard")
-    public Board getBoard(String id) { return service.getBoard(id); }
+    @PostMapping("/getBoard/{id}")
+    public Board getBoard(@PathVariable("id") String id) { return service.getBoard(id); }
 
     @PostMapping("/regBoard")
     public void regBoard(@RequestBody Board board){

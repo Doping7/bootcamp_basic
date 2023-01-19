@@ -33,11 +33,11 @@ public class QnAService {
         store.update(qna);
     } // modQna의 경우 답변자가 답변을 추가하거나 질문자가 질문을 수정할 때 호출.
 
-    public void deleteQnA(Long id) {
+    public void deleteQnA(String id) {
         store.delete(id);
     }
 
-    public QnA getQnA(Long id) {
+    public QnA getQnA(String id) {
         return store.retrieveById(id);
     }
 }

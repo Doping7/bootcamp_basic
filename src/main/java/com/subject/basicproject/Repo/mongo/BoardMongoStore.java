@@ -8,6 +8,7 @@ import com.subject.basicproject.Repo.mongo.repository.BoardRepo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class BoardMongoStore implements boardStore {
@@ -60,7 +61,8 @@ public class BoardMongoStore implements boardStore {
 
     @Override
     public Board retrieveById(String id) {
-        return repo.findById(id).get().toEntity();
+        Optional<BoardDoc> boardDoc = repo.findById(id);
+        return boardDoc.map(BoardDoc::toEntity).orElseGet(()->null);
     }
 
     @Override

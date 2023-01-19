@@ -8,6 +8,7 @@ import com.subject.basicproject.Repo.mongo.repository.NoticeRepo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class NoticeMongoStore implements noticeStore {
@@ -61,7 +62,8 @@ public class NoticeMongoStore implements noticeStore {
 
     @Override
     public Notice retrieveById(String id) {
-        return repo.findById(id).get().toEntity();
+        Optional<NoticeDoc> noticeDoc = repo.findById(id);
+        return noticeDoc.map(NoticeDoc::toEntity).orElseGet(()->null);
     }
 
     @Override
