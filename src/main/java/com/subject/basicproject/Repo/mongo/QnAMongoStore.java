@@ -36,7 +36,6 @@ public class QnAMongoStore implements qnaStore {
     public void update(QnA qna) {
         QnADoc qnaDoc = new QnADoc(qna);
         repo.save(qnaDoc);
-
     }
 
     @Override

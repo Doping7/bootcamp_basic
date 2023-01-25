@@ -30,6 +30,7 @@ public class QnAService {
     }
 
     public void modQnA(QnA qna) {
+        qna.setAnsDate(Util.genDate());
         store.update(qna);
     } // modQna의 경우 답변자가 답변을 추가하거나 질문자가 질문을 수정할 때 호출.
 

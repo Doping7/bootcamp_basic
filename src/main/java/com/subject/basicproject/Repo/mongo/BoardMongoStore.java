@@ -34,6 +34,7 @@ public class BoardMongoStore implements boardStore {
 
     @Override
     public void update(Board board) {
+        board.setViewCount(board.getViewCount()+1);
         BoardDoc boardDoc = new BoardDoc(board);
         repo.save(boardDoc);
 

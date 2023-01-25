@@ -8,8 +8,8 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class QnA {
     String id;
-    // question Title 과 Contents 구분할 예정
-    String question;
+    String questionTitle;
+    String questionContents;
     String answer;
     User quesUser;
     User ansUser;

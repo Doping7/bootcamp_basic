@@ -42,6 +42,8 @@ public class BoardService {
     }
 
     public Board getBoard(String id) {
+        Board board = store.retrieveById(id);
+        store.update(board);
         return store.retrieveById(id);
     }
 }

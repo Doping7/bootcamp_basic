@@ -17,7 +17,8 @@ import java.util.stream.Collectors;
 @Setter
 public class QnADoc {
     private String id;
-    private String question;
+    private String questionTitle;
+    private String questionContents;
     private String answer;
     private User quesUser;
     private User ansUser;

@@ -27,7 +27,7 @@ public class QnAController {
     }
 
     @PostMapping("/modQnA")
-    public void modQnA(QnA qna) { service.modQnA(qna); }
+    public void modQnA(@RequestBody QnA qna) { service.modQnA(qna); }
 
     @PostMapping("/delQnA")
     public void deleteQnA(String id) {service.deleteQnA(id); }
